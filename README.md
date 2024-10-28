@@ -11,7 +11,6 @@
       <th height=33 width=100>Express</th>
       <th height=33 width=100>Bootstrap</th>
       <th height=33 width=100>SQLite</th>
-      <th height=33 width=100>Electron</th>
       <th height=33 width=100>NPM</th>
       <th height=33 width=100>JSON</th>
       <th height=33 width=100>Curl</th>
@@ -38,11 +37,6 @@
       <td height=100 width=100>
         <a href=https://www.sqlite.org/index.html>
           <img src=https://github.com/AndriiKot/___Icons__and__Links___/blob/main/icons/sqlite.svg alt=SQLite>
-        </a>
-      </td>
-      <td height=100 width=100>
-        <a href=https://www.electronjs.org/>
-          <img src=https://github.com/AndriiKot/___Icons__and__Links___/blob/main/icons/electron.svg alt=Electron>
         </a>
       </td>
       <td height=100 width=100>
