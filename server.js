@@ -17,7 +17,7 @@ let articles = [
 ];
 
 app.get("/", (req, res) => {
-  res.json({ message: "Hello World!" });
+  res.json({ message: "Hello World!!" });
 });
 
 app.get("/articles", (req, res) => {
@@ -29,6 +29,18 @@ app.post("/articles", (req, res) => {
   articles.push(article);
   console.log(`Added article: ${article.title}`);
   res.status(201).json({ message: "Article created", article });
+});
+
+app.get("/articles/:id", (req, res) => {
+  const { id } = req.params;
+  const article = articles[id];
+
+  if (article) {
+    console.log(`Fetching article: ${id}`);
+    res.json(article);
+  } else {
+    res.status(404).json({ message: "Article not found" });
+  }
 });
 
 app.listen(port, () => {
