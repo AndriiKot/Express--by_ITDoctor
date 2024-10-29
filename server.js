@@ -1,9 +1,12 @@
 "use strict";
 
-require("dotenv").config();
-const express = require("express");
+import dotenv from "dotenv";
+import express from "express";
+
+dotenv.config();
+
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8000;
 
 app.get("/", (req, res) => {
   res.send("Hello, World from Express!");
