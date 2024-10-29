@@ -8,8 +8,27 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
+app.use(express.json());
+
+let articles = [
+  { title: "Title 1" },
+  { title: "Title 2" },
+  { title: "Title 3" },
+];
+
 app.get("/", (req, res) => {
-  res.send("Hello, World from Express!");
+  res.json({ message: "Hello World!" });
+});
+
+app.get("/articles", (req, res) => {
+  res.json(articles);
+});
+
+app.post("/articles", (req, res) => {
+  const article = { title: req.body.title };
+  articles.push(article);
+  console.log(`Added article: ${article.title}`);
+  res.status(201).json({ message: "Article created", article });
 });
 
 app.listen(port, () => {
