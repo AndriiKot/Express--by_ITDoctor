@@ -43,6 +43,18 @@ app.get("/articles/:id", (req, res) => {
   }
 });
 
+app.delete("/articles/:id", (req, res) => {
+  const { id } = req.params;
+
+  if (articles[id]) {
+    console.log(`Deleting article: ${id}`);
+    articles.splice(id, 1); // Удаляем статью по индексу
+    res.json({ message: "Deleted article" });
+  } else {
+    res.status(404).json({ message: "Article not found" });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
